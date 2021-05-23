@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "4286c811-8d37-4742-ad46-b8738986c840",
+		"name": "Twitter Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW1wcmVldGgiLCJleHAiOjE2MjIyNzQ0MjIsImlhdCI6MTYyMTY2OTYyMn0.t1Ji7nZbzZBVzDw6VQUanb6A6q5zaRSixVSxDo7FneZMfrGSfdETzVUPVu_e061frwi1-mPdqWyJvu-x5PDRjg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"sampreeth\",\r\n    \"lastName\": \"sarveswara\",\r\n    \"email\": \"bsk@gmail.com\",\r\n    \"password\": \"456\",\r\n    \"phoneNumber\": 77299,\r\n    \"userName\": \"vihari\",\r\n    \"userEventType\": \"NEW\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/user-register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"user-register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"in28minutes\",\r\n    \"password\": \"dummy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"123\",\r\n    \"userName\": \"SampreethS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Update Password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"be69cb20-ba26-11eb-8777-7193c37de54c\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/update-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"update-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/users/search/sampreeth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"users",
+						"search",
+						"sampreeth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tweet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tweetMessage\": \"This is Sampreeth Tweet\",\r\n    \"userName\": \"sampreeth\",\r\n    \"tweetDate\": \"2021-05-15\",\r\n    \"userEventType\": \"NEW\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/add-tweet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"add-tweet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentMessage\": \"This is Sampreeth Comment\",\r\n    \"userName\": \"sampreeth\",\r\n    \"tweetId\": \"55028d10-ba2c-11eb-8777-7193c37de54c\",\r\n    \"commentDate\": \"2021-05-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/tweets/add-comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tweets",
+						"add-comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tweet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tweetId\": \"2cd3d6a0-ba2c-11eb-8777-7193c37de54c\",\r\n        \"tweetMessage\": \"My First Tweet Editted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/update-tweet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"update-tweet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Likes Tweet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"tweetId\": \"55028d10-ba2c-11eb-8777-7193c37de54c\",\r\n        \"likes\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/add-like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"add-like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tweet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"be69cb20-ba26-11eb-8777-7193c37de54c\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/SampreethS/delete-tweet/2cd3d6a0-ba2c-11eb-8777-7193c37de54c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"SampreethS",
+						"delete-tweet",
+						"2cd3d6a0-ba2c-11eb-8777-7193c37de54c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Tweets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/tweets/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tweets",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tweets By User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/tweets/sampreeth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"tweets",
+						"sampreeth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
